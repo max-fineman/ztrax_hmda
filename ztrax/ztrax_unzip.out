@@ -1,0 +1,164 @@
+
+Attaching package: ‘purrr’
+
+The following object is masked from ‘package:data.table’:
+
+    transpose
+
+[[1]]
+[1] "01/ZTrans\\Main.txt"         "01/ZTrans\\PropertyInfo.txt"
+
+[[2]]
+[1] "02/ZTrans\\Main.txt"         "02/ZTrans\\PropertyInfo.txt"
+
+[[3]]
+[1] "04/ZTrans\\Main.txt"         "04/ZTrans\\PropertyInfo.txt"
+
+[[4]]
+[1] "05/ZTrans\\Main.txt"         "05/ZTrans\\PropertyInfo.txt"
+
+[[5]]
+character(0)
+
+[[6]]
+[1] "08/ZTrans\\Main.txt"         "08/ZTrans\\PropertyInfo.txt"
+
+[[7]]
+[1] "09/ZTrans\\Main.txt"         "09/ZTrans\\PropertyInfo.txt"
+
+[[8]]
+[1] "10/ZTrans\\Main.txt"         "10/ZTrans\\PropertyInfo.txt"
+
+[[9]]
+[1] "11/ZTrans\\Main.txt"         "11/ZTrans\\PropertyInfo.txt"
+
+[[10]]
+character(0)
+
+[[11]]
+[1] "13/ZTrans\\Main.txt"         "13/ZTrans\\PropertyInfo.txt"
+
+[[12]]
+[1] "15/ZTrans\\Main.txt"         "15/ZTrans\\PropertyInfo.txt"
+
+[[13]]
+[1] "16/ZTrans\\Main.txt"         "16/ZTrans\\PropertyInfo.txt"
+
+[[14]]
+[1] "17/ZTrans\\Main.txt"         "17/ZTrans\\PropertyInfo.txt"
+
+[[15]]
+[1] "18/ZTrans\\Main.txt"         "18/ZTrans\\PropertyInfo.txt"
+
+[[16]]
+[1] "19/ZTrans\\Main.txt"         "19/ZTrans\\PropertyInfo.txt"
+
+[[17]]
+[1] "20/ZTrans\\Main.txt"         "20/ZTrans\\PropertyInfo.txt"
+
+[[18]]
+[1] "21/ZTrans\\Main.txt"         "21/ZTrans\\PropertyInfo.txt"
+
+[[19]]
+[1] "22/ZTrans\\Main.txt"         "22/ZTrans\\PropertyInfo.txt"
+
+[[20]]
+[1] "23/ZTrans\\Main.txt"         "23/ZTrans\\PropertyInfo.txt"
+
+[[21]]
+[1] "24/ZTrans\\Main.txt"         "24/ZTrans\\PropertyInfo.txt"
+
+[[22]]
+[1] "25/ZTrans\\Main.txt"         "25/ZTrans\\PropertyInfo.txt"
+
+[[23]]
+[1] "26/ZTrans\\Main.txt"         "26/ZTrans\\PropertyInfo.txt"
+
+[[24]]
+[1] "27/ZTrans\\Main.txt"         "27/ZTrans\\PropertyInfo.txt"
+
+[[25]]
+[1] "28/ZTrans\\Main.txt"         "28/ZTrans\\PropertyInfo.txt"
+
+[[26]]
+[1] "29/ZTrans\\Main.txt"         "29/ZTrans\\PropertyInfo.txt"
+
+[[27]]
+[1] "30/ZTrans\\Main.txt"         "30/ZTrans\\PropertyInfo.txt"
+
+[[28]]
+[1] "31/ZTrans\\Main.txt"         "31/ZTrans\\PropertyInfo.txt"
+
+[[29]]
+[1] "32/ZTrans\\Main.txt"         "32/ZTrans\\PropertyInfo.txt"
+
+[[30]]
+[1] "33/ZTrans\\Main.txt"         "33/ZTrans\\PropertyInfo.txt"
+
+[[31]]
+[1] "34/ZTrans\\Main.txt"         "34/ZTrans\\PropertyInfo.txt"
+
+[[32]]
+[1] "35/ZTrans\\Main.txt"         "35/ZTrans\\PropertyInfo.txt"
+
+[[33]]
+[1] "36/ZTrans\\Main.txt"         "36/ZTrans\\PropertyInfo.txt"
+
+[[34]]
+[1] "37/ZTrans\\Main.txt"         "37/ZTrans\\PropertyInfo.txt"
+
+[[35]]
+[1] "38/ZTrans\\Main.txt"         "38/ZTrans\\PropertyInfo.txt"
+
+[[36]]
+[1] "39/ZTrans\\Main.txt"         "39/ZTrans\\PropertyInfo.txt"
+
+[[37]]
+[1] "40/ZTrans\\Main.txt"         "40/ZTrans\\PropertyInfo.txt"
+
+[[38]]
+[1] "41/ZTrans\\Main.txt"         "41/ZTrans\\PropertyInfo.txt"
+
+[[39]]
+[1] "42/ZTrans\\Main.txt"         "42/ZTrans\\PropertyInfo.txt"
+
+[[40]]
+[1] "44/ZTrans\\Main.txt"         "44/ZTrans\\PropertyInfo.txt"
+
+[[41]]
+[1] "45/ZTrans\\Main.txt"         "45/ZTrans\\PropertyInfo.txt"
+
+[[42]]
+[1] "46/ZTrans\\Main.txt"         "46/ZTrans\\PropertyInfo.txt"
+
+[[43]]
+[1] "47/ZTrans\\Main.txt"         "47/ZTrans\\PropertyInfo.txt"
+
+[[44]]
+character(0)
+
+[[45]]
+[1] "49/ZTrans\\Main.txt"         "49/ZTrans\\PropertyInfo.txt"
+
+[[46]]
+[1] "50/ZTrans\\Main.txt"         "50/ZTrans\\PropertyInfo.txt"
+
+[[47]]
+[1] "51/ZTrans\\Main.txt"         "51/ZTrans\\PropertyInfo.txt"
+
+[[48]]
+[1] "53/ZTrans\\Main.txt"         "53/ZTrans\\PropertyInfo.txt"
+
+[[49]]
+[1] "54/ZTrans\\Main.txt"         "54/ZTrans\\PropertyInfo.txt"
+
+[[50]]
+[1] "55/ZTrans\\Main.txt"         "55/ZTrans\\PropertyInfo.txt"
+
+[[51]]
+[1] "56/ZTrans\\Main.txt"         "56/ZTrans\\PropertyInfo.txt"
+
+[[52]]
+[1] "66/ZTrans\\Main.txt"         "66/ZTrans\\PropertyInfo.txt"
+
+There were 20 warnings (use warnings() to see them)
