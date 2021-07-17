@@ -11,18 +11,17 @@
 clean_lenders <- function(year, hmda_dir){
   library(dplyr)
   library(readr)
-  setwd(hmda_dir)
-  
+
   #create filename template based on year
-  filename.panel <- case_when(year %in% 2000:2003 ~ paste0('panel/HMS.U', year, '.PANEL'),
-                        year == 2004 ~ 'panel/u2004pan.public.dat',
-                        year %in% 2005:2006 ~ paste0('panel/PANEL.U.', year, '.DAT'),
-                        year %in% 2007:2017 ~ paste0('panel/hmda_', year, '_panel'),
+  filename.panel <- case_when(year %in% 2000:2003 ~ paste0(hmda_dir, '/panel/HMS.U', year, '.PANEL'),
+                        year == 2004 ~ paste0(hmda_dir, '/panel/u2004pan.public.dat'),
+                        year %in% 2005:2006 ~ paste0(hmda_dir, '/panel/PANEL.U.', year, '.DAT'),
+                        year %in% 2007:2017 ~ paste0(hmda_dir, '/panel/hmda_', year, '_panel'),
                         TRUE ~ '')
-  filename.ts <- case_when(year %in% 2000:2003 ~ paste0('transmittal/HMS.U', year, '.TS'),
-                           year == 2004 ~ 'transmittal/u2004ts.public.dat',
-                           year %in% 2005:2006 ~ paste0('transmittal/TS.ULTIMATE.', year, '.DAT'),
-                           year %in% 2007:2017 ~ paste0('transmittal/hmda_', year, '_transmittal_sheet'),
+  filename.ts <- case_when(year %in% 2000:2003 ~ paste0(hmda_dir, '/transmittal/HMS.U', year, '.TS'),
+                           year == 2004 ~ paste0(hmda_dir, '/transmittal/u2004ts.public.dat'),
+                           year %in% 2005:2006 ~ paste0(hmda_dir,'/transmittal/TS.ULTIMATE.', year, '.DAT'),
+                           year %in% 2007:2017 ~ paste0(hmda_dir, '/transmittal/hmda_', year, '_transmittal_sheet'),
                            TRUE ~ '')
   
   #throw error if year is out of data range
@@ -161,7 +160,7 @@ clean_lenders <- function(year, hmda_dir){
                       col_types = col.type.panel)
     #write panel
     write_csv(panel, 
-              paste0('panel/hmda_', year, '_panel.csv'))
+              paste0(hmda_dir, '/panel/hmda_', year, '_panel.csv'))
     
     #read transmittal
     ts <- read_fwf(filename.ts,
@@ -169,7 +168,7 @@ clean_lenders <- function(year, hmda_dir){
                    col_types = col.type.ts)
     #write transmittal
     write_csv(ts,
-              paste0('transmittal/hmda_', year, '_transmittal_sheet.csv'))
+              paste0(hmda_dir, '/transmittal/hmda_', year, '_transmittal_sheet.csv'))
   }else{
     #if 2007-2017, unzip files
     unzip(paste0(filename.panel, '.zip'), exdir = 'panel/')
@@ -256,11 +255,6 @@ clean_lenders <- function(year, hmda_dir){
                         'lar_count')
     }
     
-    
-                        
-    
-    
-    
     panel <- read_csv(paste0(filename.panel, '.csv'),
                       col_names = col.names.pan,
                       skip=1)  
@@ -274,18 +268,36 @@ clean_lenders <- function(year, hmda_dir){
 
 get_lenders <- function(year, hmda_dir){
   library(data.table)
-  setwd(hmda_dir)
-  
+
   #read in panel
-  panel <- fread(paste0('panel/hmda_', year, '_panel.csv')) %>% 
-    select(as_of_year, agency_code, starts_with('resp'), starts_with('parent'))
+  panel <- fread(paste0(hmda_dir, '/panel/hmda_', year, '_panel.csv'))
   #read in transmittal
-  ts <- fread(paste0('transmittal/hmda_', year, '_transmittal_sheet.csv')) %>%
-    select(as_of_year, agency_code, starts_with('resp'), starts_with('parent'))
+  ts <- fread(paste0(hmda_dir, '/transmittal/hmda_', year, '_transmittal_sheet.csv'))
+  if (year %in% 2000:2017){
+    panel <- panel %>% 
+      select(as_of_year, agency_code, starts_with('resp'), starts_with('parent')) %>%
+      mutate(arid = str_c(agency_code, respondent_id))
+    ts <- ts  %>%
+      select(as_of_year, agency_code, starts_with('resp'), starts_with('parent')) %>%
+      mutate(arid = str_c(agency_code, respondent_id))
+      
+  }else{
+    panel <- panel %>% 
+      select(activity_year, lei, starts_with('resp'), starts_with('parent')) %>%
+      rename(as_of_year = activity_year,
+             arid = lei,
+             resp_name = respondent_name)
+    ts <- ts %>%
+      select(activity_year, lei, starts_with('resp'), starts_with('parent')) %>%
+      rename(as_of_year = activity_year,
+             arid = lei,
+             resp_name = respondent_name)
+  }
+  
   
   #merge them so that we can get multiple lender name spellings and locations
   lenders <- full_join(panel, ts,
-                       by = c('respondent_id', 'agency_code', 'as_of_year'),
+                       by = c('arid', 'as_of_year'),
                        suffix = c('_panel', '_ts')) %>% distinct()
   
   return(lenders)

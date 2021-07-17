@@ -1,0 +1,10 @@
+
+Attaching package: ‘purrr’
+
+The following object is masked from ‘package:data.table’:
+
+    transpose
+
+Warning message:
+In unzip(zipfile = paste0(state, ".zip"), files = c("ZTrans\\Main.txt",  :
+  zip file is corrupt

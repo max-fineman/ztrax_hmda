@@ -9,7 +9,7 @@
 library(data.table)
 library(stringr)
 library(purrr)
-ztrax.dir <- '/scratch/gpfs/mfineman/ztrax/20201012'
+ztrax.dir <- '/scratch/gpfs/mfineman/ztrax/20210405'
 setwd(ztrax.dir)
 
 #list of .zip files to extract tables from
